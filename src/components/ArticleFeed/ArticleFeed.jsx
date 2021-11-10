@@ -20,16 +20,21 @@ return (
         <Button>FOR ORGANIZATIONS</Button>
         <Button>LIFE AT DIALOGUE</Button>
     </Buttons>
+    <Divy>
 {store.articles.slice(0, numArticles ? numArticles: store.articles.length).map((blogPost) => {
 const article = blogPost;
 console.log(article, "posts");
 const title = article.fields.title;
 const category = article.fields.category;
 
-return <Article title={title} category={category}/>
+return (    
+<Article title={title} category={category}/>
+)
 
 })}
+</Divy>
 <ButtonHolder>
+
 <LoadMore onClick={handleClick}>Load More</LoadMore>
 </ButtonHolder>
 </BigBox>
@@ -40,9 +45,10 @@ export default ArticleFeed;
 
 const BigBox = styled.div`
 background-color: #F7DFC2;
+
 `
 const Categories = styled.h1`
-text-align:center;
+text-align: center;
 `
 const Div = styled.div`
 margin-top: 20px;
@@ -81,4 +87,8 @@ position: relative;
 width: 200px;
 height: auto;
 margin:0 auto;
+`
+const Divy = styled.div`
+display: flex;
+flex-wrap: wrap;
 `

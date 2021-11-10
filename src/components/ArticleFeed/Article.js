@@ -19,6 +19,7 @@ export default Article;
 
 const Title = styled.h2`
 margin-bottom: 100px;
+min-height: 64px;
 `
 const Category = styled.p`
 
@@ -41,4 +42,5 @@ height: 375px;
 `
 const Div = styled.div`
 margin-left: 20px;
+
 `
