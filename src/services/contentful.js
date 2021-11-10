@@ -7,7 +7,7 @@ const CONTENTFUL_URL = `https://cdn.contentful.com/spaces/6fmuqje9nkz0/environme
 export const getAllArticles = async () => {
   try {
     const response = await request(GET, CONTENTFUL_URL);
-
+    
     return response.items;
   } catch (e) {
     console.log("getAllArticles failed:", e);

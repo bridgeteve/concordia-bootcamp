@@ -15,7 +15,10 @@ export const StoreProvider = ({ children }) => {
 
   // TODO: Update the method below to return the latest featured article from the list of articles
   const getFeatured = () => {
-    return null;
+   const featuredArt = articles.filter((post) => {
+      return post.fields.featured
+    })
+return featuredArt;
   };
 
   return (

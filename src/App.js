@@ -1,13 +1,15 @@
 import GlobalStyle from "./base-styles";
-import { useStore } from "./contexts/Store";
-
+import { useStore } from "./contexts/Store"; 
 import Container from "./components/Container";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import Featured from "./components/FeaturedArticle/Featured";
+import ArticleFeed from "./components/ArticleFeed/ArticleFeed";
+import styled from "styled-components";
 
 function App() {
   const store = useStore();
-
+  
   console.log("TODO: use the store to create the base UI", store);
 
   return (
@@ -15,10 +17,10 @@ function App() {
       <GlobalStyle />
       <main className="App">
         <Header />
-
-        {/* TODO: Blog things goes here. Use the components folder! */}
         <Container>
-          <h1>Hello 🌎</h1>
+          <Blog>Blog</Blog>
+          <Featured store={store}/>
+          <ArticleFeed store={store}/>
         </Container>
 
         <Footer />
@@ -28,3 +30,9 @@ function App() {
 }
 
 export default App;
+
+const Blog = styled.h1`
+font-size: 70px;
+margin-bottom: 20px;
+`
+
