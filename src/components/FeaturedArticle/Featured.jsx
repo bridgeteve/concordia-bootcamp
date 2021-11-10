@@ -6,13 +6,12 @@ const Featured = ({store}) => {
 const { getFeaturedArticle} = useStore();
 console.log(getFeaturedArticle(), "hello");
 const featuredBlogs = getFeaturedArticle();
-
 const Post = featuredBlogs.sort((a, b)=> {
     return  a.fields.date - b.fields.date;
     })
     console.log(Post[0], "hey")
-    const title = Post[0].fields.title
-    const content = Post[0].fields.content
+    const title = Post[0]?.fields.title
+    const content = Post[0]?.fields.content
     console.log(title, "pizz")
     console.log(content, "wtf")
 
